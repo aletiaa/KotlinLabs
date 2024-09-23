@@ -139,9 +139,9 @@ fun Task2Screen(modifier: Modifier = Modifier) {
     Column(
         modifier = modifier
             .fillMaxSize()
-            .padding(8.dp)
+            .padding(4.dp)
             .verticalScroll(scrollState),
-        verticalArrangement = Arrangement.spacedBy(8.dp)
+        verticalArrangement = Arrangement.spacedBy(4.dp)
     ) {
         Text(text = "Task 2: Fuel Oil Composition Calculator", fontWeight = FontWeight.Bold)
 
@@ -155,7 +155,7 @@ fun Task2Screen(modifier: Modifier = Modifier) {
         FuelInputField(label = "Ванадій (мг/кг)", value = vanadium) { vanadium = it }
         FuelInputField(label = "Нижча теплота згоряння (МДж/кг)", value = lowerHeatCombustion) { lowerHeatCombustion = it }
 
-        Spacer(modifier = Modifier.height(8.dp))
+        Spacer(modifier = Modifier.height(4.dp))
 
         // Button to calculate the result
         Button(onClick = {
@@ -182,13 +182,13 @@ fun Task2Screen(modifier: Modifier = Modifier) {
             Text("Розрахувати")
         }
 
-        Spacer(modifier = Modifier.height(16.dp))
+        Spacer(modifier = Modifier.height(4.dp))
 
         if (errorMessage.isNotEmpty()) {
             Text(errorMessage, color = MaterialTheme.colorScheme.error)
         }
 
-        Spacer(modifier = Modifier.height(16.dp))
+        Spacer(modifier = Modifier.height(4.dp))
 
         Text(result)
     }
@@ -251,7 +251,6 @@ fun calculateFuelCombustion(
     val Q_burning = (lowerHeatOfCombustion + 0.025 * moisture) * crg
     // Format and return the result
     return """
-        
         Нижча теплота згоряння: %.2f Мдж/кг
         Нижча теплота згоряння для сухої маси: %.2f МДж/кг
         Нижча теплота згоряння для горючої маси: %.2f МДж/кг
